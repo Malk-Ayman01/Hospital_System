@@ -7,6 +7,10 @@
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    --color-primary: #0369a1;
+    --color-secondry: #e0f2fe;
+    --color-dark: #0f172a;
+
 }
 
 * {
