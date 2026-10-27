@@ -8,13 +8,45 @@ import {
   FaHospital,
   FaArrowLeft,
   FaClipboardCheck,
+  FaClock,
+  FaFileMedical,
 
 } from "react-icons/fa6";
-import { SiGoogleanalytics } from "react-icons/si";
+import { 
+    SiGoogleanalytics,
+   
+ } from "react-icons/si";
+
+
+
+ const features = [
+    {
+      title: "حجز ذكي من 7 خطوات",
+      description:
+        "تحديد القسم، الطبيب، التاريخ، نوع الزيارة، الأعراض، وإتمام الحجز والدفع بكل سهولة ويسر.",
+      icon: <FaCalendarCheck />,
+    
+    },
+    {
+      title: "طوابير الانتظار الفورية",
+      description:
+        "تتبع حركة المريض لحظة بلحظة: من الاستقبال وحتى دخول العيادة، الصيدلية، ومعمل التحاليل.",
+      icon: <FaClock />,
+    
+    },
+    {
+      title: "ملفات طبية رقمية مؤمنة",
+      description:
+        "حفظ الروشتات، نتائج التحاليل، والأشعة في ملف المريض مع إمكانية طباعتها ومشاركتها فوراً.",
+      icon: <FaFileMedical />,
+    
+    },
+  ];
 
 
 export default function Home() {
   return (
+    <>
     <section
       dir="rtl"
       className="min-h-screen bg-slate-50 px-5 py-12 sm:px-8 lg:px-12 lg:py-20"
@@ -207,5 +239,54 @@ export default function Home() {
         </div>
       </div>
     </section>
+    
+
+    {/*  Features Section */}
+
+    <section className="bg-white px-6 py-20 lg:px-12 lg:py-28">
+      <div className="mx-auto max-w-[1300px]">
+
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <h2 className="text-3xl font-extrabold text-black lg:text-4xl">
+            مميزات نظام CarePath الشاملة
+          </h2>
+
+          <p className="mx-auto mt-3 max-w-2xl text-base text-gray-500">
+            كل ما تحتاجه المستشفيات الحديثة لإدارة المرضى والطاقم الطبي بكفاءة
+            واحترافية تامة.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="rounded-3xl border border-gray-200/70 bg-gray-50 p-8 text-right transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
+              {/* Icon */}
+              <div
+                className={`mb-8 flex h-14 w-14 items-center justify-center rounded-2xl text-2xl bg-primary text-white`}
+              >
+                {feature.icon}
+              </div>
+
+              {/* Title */}
+              <h3 className="mb-3 text-2xl font-extrabold text-black">
+                {feature.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-sm leading-7 text-gray-500">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+</>
   );
 }
