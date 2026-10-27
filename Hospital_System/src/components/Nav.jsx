@@ -8,12 +8,12 @@ export default function Nav() {
 
   const navLinks = [
     { name: 'الرئيسية', path: '/' },
-    { name: 'حجز موعد', path: '/Appointment' },
+    { name: 'حجز موعد', path: '/appointment' },
     { name: 'رحلة المريض الفورية', path: '/PatientJourney' },
-    { name: 'لوحة المريض', path: '/PatientDashboard' },
-    { name: 'الاستقبال', path: '/SalesDashboard' },
-    { name: 'الأطباء', path: '/DoctorDashboard' },
-    { name: 'الإدارة', path: '/AdminDashboard' },
+    { name: 'لوحة المريض', path: '/patient/dashboard' },
+    { name: 'الاستقبال', path: '/sales/dashboard' },
+    { name: 'الأطباء', path: '/doctor/dashboard' },
+    { name: 'الإدارة', path: '/admin/dashboard' },
   ];
 
   return (
@@ -50,15 +50,22 @@ export default function Nav() {
         </div>
 
         {/* Desktop Buttons */}
-        <div className="hidden shrink-0 items-center gap-3 xl:flex">
-          <button className="whitespace-nowrap text-gray-600 transition-colors hover:text-primary">
-            تسجيل الدخول
-          </button>
+       {/* Desktop Buttons */}
+<div className="hidden shrink-0 items-center gap-3 xl:flex">
+  <Link
+    to="/login"
+    className="whitespace-nowrap text-gray-600 transition-colors hover:text-primary"
+  >
+    تسجيل الدخول
+  </Link>
 
-          <button className="whitespace-nowrap rounded-xl bg-primary px-4 py-2 text-white transition-colors hover:bg-primary/90">
-            حساب جديد
-          </button>
-        </div>
+  <Link
+    to="/signup"
+    className="whitespace-nowrap rounded-xl bg-primary px-4 py-2 text-white transition-colors hover:bg-primary/90"
+  >
+    حساب جديد
+  </Link>
+</div>
 
         {/* Mobile Menu Button */}
         <button
@@ -86,21 +93,23 @@ export default function Nav() {
               </Link>
             ))}
 
-            <div className="mt-2 flex flex-col gap-3 border-t border-gray-100 pt-4 sm:flex-row">
-              <button
-                onClick={() => setIsOpen(false)}
-                className="rounded-xl border border-primary px-4 py-2 text-primary transition-colors hover:bg-sky-50"
-              >
-                تسجيل الدخول
-              </button>
+         <div className="mt-2 flex flex-col gap-3 border-t border-gray-100 pt-4 sm:flex-row">
+  <Link
+    to="/login"
+    onClick={() => setIsOpen(false)}
+    className="rounded-xl border border-primary px-4 py-2 text-center text-primary transition-colors hover:bg-secondary"
+  >
+    تسجيل الدخول
+  </Link>
 
-              <button
-                onClick={() => setIsOpen(false)}
-                className="rounded-xl bg-primary px-4 py-2 text-white transition-colors hover:bg-primary/90"
-              >
-                حساب جديد
-              </button>
-            </div>
+  <Link
+    to="/signup"
+    onClick={() => setIsOpen(false)}
+    className="rounded-xl bg-primary px-4 py-2 text-center text-white transition-colors hover:bg-primary/90"
+  >
+    حساب جديد
+  </Link>
+</div>
           </div>
         </div>
       )}
