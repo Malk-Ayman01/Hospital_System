@@ -97,7 +97,6 @@ export default function ClinicDoctors({ title, description, doctors }) {
 
                         <Link
                             to="/appointment"
-                            onClick={() => setSelectedDoctor(doctor)}
                             className="w-full mt-5 flex items-center
                                 justify-center gap-2 bg-sky-600 text-white
                                 py-3 rounded-xl font-bold hover:bg-sky-700
