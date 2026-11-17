@@ -11,6 +11,14 @@ import Sections from "./pages/Sections"
 import Bones from "./pages/Bones"
 import Cardiology from "./pages/Cardiology"
 import BookingWizard from "./pages/BookingWizard"
+import PatientQueue from "./pages/DoctorPage/PatientQueue";
+import DoctorDashboard from "./pages/DoctorPage/DoctorDashboard";
+import ConsultationRoom from "./pages/DoctorPage/ConsultationRoom";
+import DoctorLayout from "./layouts/DoctorLayout";
+import MedicalRecords from "./pages/DoctorPage/MedicalRecords";
+import PatientMedicalHistory from "./pages/DoctorPage/PatientMedicalHistory";
+
+
 
 function App() {
     return (
@@ -33,6 +41,21 @@ function App() {
                         path="/login"
                         element={<Login />}
                     />
+                    
+  {/* Doctor Routes */}
+          <Route path="doctor" element={<DoctorLayout />}>
+            <Route
+              path="doctordashboard"
+              element={<DoctorDashboard />}
+            />
+            <Route path="queue" element={<PatientQueue />} />
+            <Route path="consultation" element={<ConsultationRoom />} />
+            <Route path="records" element={<MedicalRecords />} />
+              <Route
+    path="records/:patientId"
+    element={<PatientMedicalHistory />}
+  />
+          </Route>
 
                     <Route
                         path="/sections/dashboard"
@@ -42,10 +65,7 @@ function App() {
                         path="/sections/bones"
                         element={<Bones />}
                     />
-                    <Route
-                        path="/sections/bones"
-                        element={<Bones />}
-                    />
+                  
                     <Route
                         path="/sections/cardiology"
                         element={<Cardiology />}
@@ -71,3 +91,5 @@ function App() {
 }
 
 export default App
+
+
