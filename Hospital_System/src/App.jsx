@@ -10,6 +10,7 @@ import Signup from "./pages/Signup"
 import Sections from "./pages/Sections"
 import Bones from "./pages/Bones"
 import Cardiology from "./pages/Cardiology"
+import BookingWizard from "./pages/BookingWizard"
 
 function App() {
     return (
@@ -48,6 +49,10 @@ function App() {
                     <Route
                         path="/sections/cardiology"
                         element={<Cardiology />}
+                    />
+                    <Route
+                        path="/appointment"
+                        element={<BookingWizard />}
                     />
 
                     <Route
