@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 // Static data for now, replace with the API response when it is ready
 const initialQueue = [
@@ -127,11 +127,12 @@ export default function SalesDashboard() {
                     </div>
 
                     <div className="flex gap-3">
-                        <button
+                        <Link
+                            to="/appointment"
                             type="button"
                             className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90">
                             تسجيل مريض جديد
-                        </button>
+                        </Link>
 
                         <button
                             type="button"
@@ -188,7 +189,9 @@ export default function SalesDashboard() {
                                         <td className="p-4 font-mono font-bold text-primary">
                                             {item.queueNumber}
                                         </td>
-                                        <td className="p-4 font-medium text-dark">{item.patient}</td>
+                                        <td className="p-4 font-medium text-dark">
+                                            {item.patient}
+                                        </td>
                                         <td className="p-4">{item.department}</td>
                                         <td className="p-4">{item.doctor}</td>
                                         <td className="p-4">

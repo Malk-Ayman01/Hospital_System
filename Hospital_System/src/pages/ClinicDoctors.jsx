@@ -1,9 +1,7 @@
-import { useState } from "react"
-import { FiCalendar, FiClock, FiUser, FiArrowLeft, FiX } from "react-icons/fi"
+import { FiCalendar, FiClock, FiUser, FiArrowLeft } from "react-icons/fi"
+import { Link } from "react-router-dom"
 
 export default function ClinicDoctors({ title, description, doctors }) {
-    const [selectedDoctor, setSelectedDoctor] = useState(null)
-
     return (
         <div className="min-h-screen bg-slate-50 p-4 sm:p-6 lg:p-8">
             {/* Header */}
@@ -97,7 +95,8 @@ export default function ClinicDoctors({ title, description, doctors }) {
                             </div>
                         </div>
 
-                        <button
+                        <Link
+                            to="/appointment"
                             onClick={() => setSelectedDoctor(doctor)}
                             className="w-full mt-5 flex items-center
                                 justify-center gap-2 bg-sky-600 text-white
@@ -105,56 +104,10 @@ export default function ClinicDoctors({ title, description, doctors }) {
                                 active:scale-95 transition-all duration-300">
                             احجز الآن
                             <FiArrowLeft />
-                        </button>
+                        </Link>
                     </div>
                 ))}
             </div>
-
-            {/* Booking Modal */}
-            {selectedDoctor && (
-                <div
-                    className="fixed inset-0 z-50 bg-slate-900/50
-                    flex items-center justify-center p-4"
-                    onClick={() => setSelectedDoctor(null)}>
-                    <div
-                        className="bg-white rounded-2xl p-6
-                        w-full max-w-md shadow-2xl relative"
-                        onClick={(e) => e.stopPropagation()}>
-                        <button
-                            onClick={() => setSelectedDoctor(null)}
-                            className="absolute left-5 top-5 text-slate-400
-                                hover:text-red-500 transition-colors">
-                            <FiX size={22} />
-                        </button>
-
-                        <h2 className="text-xl font-bold text-slate-800 mb-4">حجز موعد</h2>
-
-                        <p className="text-slate-600 mb-2">أنت على وشك حجز موعد مع:</p>
-
-                        <p className="text-sky-600 font-bold mb-5">{selectedDoctor.name}</p>
-
-                        <div className="bg-sky-50 rounded-xl p-4 space-y-3 mb-5">
-                            <p className="text-sm text-slate-600">
-                                <FiCalendar className="inline ml-2 text-sky-600" />
-                                {selectedDoctor.days}
-                            </p>
-
-                            <p className="text-sm text-slate-600">
-                                <FiClock className="inline ml-2 text-sky-600" />
-                                {selectedDoctor.time}
-                            </p>
-                        </div>
-
-                        <button
-                            onClick={() => setSelectedDoctor(null)}
-                            className="w-full bg-sky-600 text-white
-                                py-3 rounded-xl font-bold hover:bg-sky-700
-                                transition-colors">
-                            إغلاق
-                        </button>
-                    </div>
-                </div>
-            )}
         </div>
     )
 }
