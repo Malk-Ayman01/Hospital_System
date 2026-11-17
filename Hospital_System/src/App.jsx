@@ -4,9 +4,12 @@ import Layout from "./Layout"
 import HomePage from "./pages/Home"
 import Login from "./pages/Login"
 import SalesLogin from "./pages/SalesLogin"
-import DoctorDashboard from "./pages/DoctorDashboard"
+
 import SalesDashboard from "./pages/SalesDashboard"
 import Signup from "./pages/Signup"
+import Sections from "./pages/Sections"
+import Bones from "./pages/Bones"
+import Cardiology from "./pages/Cardiology"
 
 function App() {
     return (
@@ -31,8 +34,20 @@ function App() {
                     />
 
                     <Route
-                        path="/doctor/dashboard"
-                        element={<DoctorDashboard />}
+                        path="/sections/dashboard"
+                        element={<Sections />}
+                    />
+                    <Route
+                        path="/sections/bones"
+                        element={<Bones />}
+                    />
+                    <Route
+                        path="/sections/bones"
+                        element={<Bones />}
+                    />
+                    <Route
+                        path="/sections/cardiology"
+                        element={<Cardiology />}
                     />
 
                     <Route
