@@ -1,0 +1,35 @@
+# Backend API endpoints
+# Default local base URL: http://localhost:3000
+# Replace :id, :doctorId, and :patientId with actual IDs.
+# This file is documentation only; it does not affect the project.
+#
+# ALL     http://localhost:3000/
+# POST    http://localhost:3000/auth/signup
+# POST    http://localhost:3000/auth/login
+# GET     http://localhost:3000/patients/profile
+# PATCH   http://localhost:3000/patients/profile
+# GET     http://localhost:3000/doctors
+# GET     http://localhost:3000/doctors/profile
+# PATCH   http://localhost:3000/doctors/profile
+# GET     http://localhost:3000/doctors/:id
+# GET     http://localhost:3000/departments
+# GET     http://localhost:3000/departments/:id
+# GET     http://localhost:3000/schedules/doctors/:doctorId/available
+# GET     http://localhost:3000/schedules/me
+# PUT     http://localhost:3000/schedules/me
+# POST    http://localhost:3000/appointments
+# GET     http://localhost:3000/appointments/mine
+# GET     http://localhost:3000/appointments/doctor
+# GET     http://localhost:3000/appointments
+# PATCH   http://localhost:3000/appointments/:id/status
+# PATCH   http://localhost:3000/appointments/:id/cancel
+# GET     http://localhost:3000/medical-history/mine
+# GET     http://localhost:3000/medical-history/patient/:patientId
+# POST    http://localhost:3000/medical-history
+# GET     http://localhost:3000/invoices/mine
+# GET     http://localhost:3000/invoices
+# PATCH   http://localhost:3000/invoices/:id/pay
+# GET     http://localhost:3000/notifications
+# PATCH   http://localhost:3000/notifications/:id/read
+# PATCH   http://localhost:3000/notifications/read-all
+# GET     http://localhost:3000/admin/dashboard
